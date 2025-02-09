@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Will You Be My Valentine</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
+        <link rel="stylesheet" href="style.css"> <!--Link to external stylesheet-->
+        
+        <style>
+            /* Style for the music player */
+            .music-container {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: #1DB954; /* Spotify green */
+                padding: 15px;
+                border-radius: 12px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .music-container img {
+                width: 50px;
+                height: 50px;
+                border-radius: 8px;
+            }
+            .music-container audio {
+                width: 150px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="image-container"></div>
+            <div id="text-container">
+                <div id="question">Will you be my valentine?</div>
+                <div id="options">
+                    <button id="yes-button" onclick="selectOption('yes')">Yes</button>
+                    <button id="no-button" onclick="selectOption('no')">No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Player (Fixed) -->
+        <div class="music-container">
+            <img src="cover.jpg" alt="Song Cover">
+            <audio id="myAudio" autoplay loop>
+                <source src="Hey Lover.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Autoplay Fix -->
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const audio = document.getElementById('myAudio');
+                audio.play().catch(error => console.log('Autoplay blocked:', error));
+            });
+        </script>
+        <audio id="myAudio">
+            <source src="Hey Lover.mp3" type="audio/mpeg">
+        </audio>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.min.js"></script>        
+
+        <script src="script.js"></script>
+    </body>
+</html>

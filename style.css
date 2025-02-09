@@ -1,0 +1,111 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif; /* Fallback font family */
+    text-align: center; /* Center-align text */
+    margin: 0; /* Remove default margin */
+    background-color: #FDB0C0; /* Set background color to light pink */
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1);
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.music-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #1DB954; /* Spotify green */
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.music-container audio {
+    width: 150px;
+}
+
+#container {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align items horizontally */
+    justify-content: center; /* Center-align items vertically */
+    height: 100vh; /* Make the container full viewport height */
+}
+
+/* This container will hold the images */
+
+#question {
+    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
+    font-size: 52px; /* Set font size for the question */
+}
+
+#options {
+    margin-top: 20px /* Add space above the options */
+}
+
+button {
+    padding: 10px 20px; /* Set padding for buttons */
+    margin: 0 10px; /*Set margin around buttons */
+    font-size: 26px; /* Set font size for buttons */
+    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
+    background-color: #FB607F; /* Set button background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove button border */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px #1DB954; }
+    50% { box-shadow: 0 0 15px #1DB954; }
+    100% { box-shadow: 0 0 5px #1DB954; }
+}
+
+.music-container {
+    animation: pulse 1s infinite alternate;
+}
+@keyframes floatingHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    bottom: -10px;
+    font-size: 20px;
+    color: red;
+    animation: floatingHearts 4s linear infinite;
+}
+body, html {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.heart {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Keeps hearts centered */
+}
+html {
+    overflow-y: hidden; /* Stops scrollbar flickering */
+}
